@@ -41,6 +41,7 @@ eshte se ne tabelen e Vigeneres gjehet prerja e secilis shkornje te celesit me s
 dhe shkronjat e celesit jane te horizontalisht. Prandaj tabela formohet 26x26, dhe neper cdo fushe mbushet me shkronja duke u perseritur alfabeti. Ne kete menyre i gjendet 
 mesazhi i enkriptuar. Kurse Dekriptimi behet duke gjetur shkronjen e tekstit te enriputar ne rrehstin e pare te tabeles se Vigenere dhe ku do qe e gjen shkronjen e njejt ne 
 ate rresht, mbi ate rresht vertikalisht gjendet shkronja e pare e plain textit.
+reference/source: https://www.geeksforgeeks.org/vigenere-cipher/ https://www.thecrazyprogrammer.com/2017/08/vigenere-cipher-c-c.html https://www.braingle.com/brainteasers/codes/vigenere.php https://www.youtube.com/watch?v=Pc9MABiASO4
  
  
  
