@@ -29,6 +29,7 @@ I shikon shkronjat 2 nga 2 pra duhet qe fjalia te jete qift per , e marrim nje m
  ne menyre horizontale ather levizin poziten per 1 ne te djatht ndersa per vertikal levizin nje me poshte , 
 ndersa epr diagonale levizin ne forme te katrorit , ndersa sa i perket dekriptimit ather eshte komplet e kunderta .
  Per ta plotsuar spjegimin tim dhe ta kupuar si duhet Ju lutem vizitoni [linkun](https://www.youtube.com/watch?v=-KjFbTK1IIw)
+ reference/source:https://www.w3schools.com/  ,  https://stackoverflow.com/ , https://www.youtube.com/         https://www.geeksforgeeks.org/playfair-cipher-with-examples/,https://www.youtube.com/watch?v=bKPQnak-F3Q.
  
  
  *Vigenere Code ( Clirim )
