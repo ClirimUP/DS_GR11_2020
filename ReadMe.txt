@@ -34,14 +34,8 @@ ndersa epr diagonale levizin ne forme te katrorit , ndersa sa i perket dekriptim
  
  *Vigenere Code ( Clirim )
  
- Per te perodorur koidn e Vigenere nevojiten nje celes dhe nje mesazh. Mesazhi dhe celesi duhet te jane te shtyupura me shkronja te alfabetit.
-gjatesia e e celesit dhe e mesazhit nuk kane rendesi. Mesazhi dhe celesi kthehen ne shkronja te medha. Ne qofte se celesi eshte me i shkurter se mesazhi
-,nje funksion gjeneron celesion dhe madhesin e tije e rrite duke e perseritur ate celes derisa ta arrije gajtesine e mesazhit. Ja ne shembull: ky do te ishte mesazhi
-ATTACKATDAWN dhe ky do te ishte celesi LEMON. Per te arritur gjatesine e mesazhit celesi merr kete forme LEMON. Arsyeje pse celesi duhet te jete i barabart me 
-eshte se ne tabelen e Vigeneres gjehet prerja e secilis shkornje te celesit me shrkonjen e mesazhit. Shkronjat e mesazhit jane vertikalisht ne tabelen e Vigeneres si
-dhe shkronjat e celesit jane te horizontalisht. Prandaj tabela formohet 26x26, dhe neper cdo fushe mbushet me shkronja duke u perseritur alfabeti. Ne kete menyre i gjendet 
-mesazhi i enkriptuar. Kurse Dekriptimi behet duke gjetur shkronjen e tekstit te enriputar ne rrehstin e pare te tabeles se Vigenere dhe ku do qe e gjen shkronjen e njejt ne 
-ate rresht, mbi ate rresht vertikalisht gjendet shkronja e pare e plain textit.
+ Per te perodorur koidn e Vigenere nevojiten nje celes dhe nje mesazh. Mesazhi dhe celesi duhet te jane te shtyupura me shkronja te alfabetit. Gjatesia e e celesit dhe e mesazhit nuk kane rendesi. Mesazhi dhe celesi kthehen ne shkronja te medha. Ne qofte se celesi eshte me i shkurter se mesazhi, nje funksion gjeneron celesion dhe madhesin e tije e rrite duke e perseritur ate celes derisa ta arrije gajtesine e mesazhit. Ja ne shembull: ky do te ishte mesazhiATTACKATDAWN dhe ky do te ishte celesi LEMON. Per te arritur gjatesine e mesazhit celesi merr kete forme LEMON. Arsyeje pse celesi duhet te jete i barabart me eshte se ne tabelen e Vigeneres gjehet prerja e secilis shkornje te celesit me shrkonjen e mesazhit. Shkronjat e mesazhit jane vertikalisht ne tabelen e Vigeneres si
+dhe shkronjat e celesit jane te horizontalisht. Prandaj tabela formohet 26x26, dhe neper cdo fushe mbushet me shkronja duke u perserituralfabeti. Ne kete menyre i gjendet mesazhi i enkriptuar. Kurse Dekriptimi behet duke gjetur shkronjen e tekstit te enriputar ne rrehstin e pare te tabeles se Vigenere dhe ku do qe e gjen shkronjen e njejt ne ate rresht, mbi ate rresht vertikalisht gjendet shkronja e pare e plain textit.
 reference/source: https://www.geeksforgeeks.org/vigenere-cipher/ https://www.thecrazyprogrammer.com/2017/08/vigenere-cipher-c-c.html https://www.braingle.com/brainteasers/codes/vigenere.php https://www.youtube.com/watch?v=Pc9MABiASO4
  
  
