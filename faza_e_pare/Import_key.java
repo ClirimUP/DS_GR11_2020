@@ -33,7 +33,7 @@ public class Import_key {
 		}
 
 	}
-	
+
 	public static String readLineBy(String filePath)
 	// motoda me lexu fajllin
 	{
@@ -47,70 +47,43 @@ public class Import_key {
 
 		return contentBuilder.toString();
 	}
-	
-	
+
 	public static boolean eshteLink(String from) {
-		
-		if(from.startsWith("http://") || from.startsWith("https://")){
+
+		if (from.startsWith("http://") || from.startsWith("https://")) {
 			return true;
 		}
 		return false;
-		
+
 	}
+
 	public static String callURL(String myURL) throws Exception {
-		StringBuilder sb=new StringBuilder();
-		URLConnection urlConn=null;
-		InputStreamReader in =null;
+		StringBuilder sb = new StringBuilder();
+		URLConnection urlConn = null;
+		InputStreamReader in = null;
 		try {
-			URL url=new URL(myURL);
-			urlConn=url.openConnection();
-			if(urlConn != null)
-				urlConn.setReadTimeout(60*1000);
-			if(urlConn != null && urlConn.getInputStream() != null) {
-				in = new InputStreamReader(urlConn.getInputStream(),
-						Charset.defaultCharset());
-				
-				BufferedReader bufferedReader =new BufferedReader(in);
+			URL url = new URL(myURL);
+			urlConn = url.openConnection();
+			if (urlConn != null)
+				urlConn.setReadTimeout(60 * 1000);
+			if (urlConn != null && urlConn.getInputStream() != null) {
+				in = new InputStreamReader(urlConn.getInputStream(), Charset.defaultCharset());
+
+				BufferedReader bufferedReader = new BufferedReader(in);
 				if (bufferedReader != null) {
 					int cp;
-					while ((cp=bufferedReader.read()) != -1) {
-						sb.append((char)cp);
+					while ((cp = bufferedReader.read()) != -1) {
+						sb.append((char) cp);
 					}
 					bufferedReader.close();
-					
+
 				}
-				
+
 			}
 			in.close();
-			
+
+		} catch (Exception e) {
+			throw new Exception("Exception while calling URL : " + myURL, e);
 		}
-		catch (Exception e) {
-			throw new Exception("Exception while calling URL : "+myURL, e);
-		}
-		return sb.toString();		
+		return sb.toString();
 	}
-
-	
-	
-	
-	
-	
-//	if(from.startsWith("http://") || from.startsWith("https://")){
-//		
-//		int shtatKarakteretFundit = from.length()-7;
-//		
-//		//  PATHI I PROFES ---- https://pastebin.com/raw/568vxV7i. (568vxV7i.) KA THON ME I BO QELS NESE FILLON ME HTTP 
-//		String bodyOfpath = from.substring(shtatKarakteretFundit, from.length());  // meri 7 karakterat e fundit boni Qels
-//		
-//		
-//		// me shkru qat body t pathit mrena pathit 
-//		BufferedWriter bf = new BufferedWriter(new FileWriter(from));
-//		fw.write(bodyOfpath);
-//		
-//		
-//		bf.close();
-//		fw.close();
-	
-	
-
-}
