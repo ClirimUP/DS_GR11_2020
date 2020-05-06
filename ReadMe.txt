@@ -54,12 +54,16 @@ Kjo faze permban gjithsej 6 kerkesa. Me posht do i rradise secilin se si kompjal
 (Dy kerkesat me siper i kemi ber me nje klase pasi qe ishte me e leht)
 
 -Export-key
+	(Kjo komand eshte bere me ane te dy metodava statike emri i te cilave eshte derguar si arg ne main)
   - Per te eksportuar nje celes publik ose privat te shfrytzuesit nga direktoriumi i celsave ndiqni keto hapa:
-	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.export_key, II.publik ose privat, III.from(file) IV.to(file)
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.export_key, II.publik ose privat(folderi), III.from(file) IV.to(file)
  
 -Import-key
+	(Kjo komand perbehet prej 2 metoda ku njera prej tyre eshte import(me file) ,ndersa e dyta ka te beje me URL
+	Ku per tcilin kod jane perdorur komanda te gatshme nga java.)
   - Per te importuar celsin publik ose privat te shfrytzuesit nga shtegu ne direktoriumin e celsace, ndiqni keto hapa:
-	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.Import_key, II.importo, III. emri
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.Import_key, II.importo, III. emri(duhet te           ipet pathi i filet qe deshironi te importoni ku pastaj ajo nqfs e plotson kushtin krijohet nje file i ri ndersa ne te kunderten
+	nuk ndodh asgje,shkon tek catch edhe te shfaq nje error)
  
 -Write-message
   - Per te shkruar nje mesazh te enkriptuar te dedikuar nje shfrytzuesi, duhet te ndiqni keto hapa:
