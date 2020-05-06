@@ -1,3 +1,5 @@
+FAZA I
+
 *Numerical Code ( Adhurim )
 
 Kodi eshte i perbere prej dy metodav, enkodimi dhe dekodimi. Te dy metodat si parameter hyres kane vetem nje parameter
@@ -38,6 +40,33 @@ ndersa epr diagonale levizin ne forme te katrorit , ndersa sa i perket dekriptim
 dhe shkronjat e celesit jane te horizontalisht. Prandaj tabela formohet 26x26, dhe neper cdo fushe mbushet me shkronja duke u perserituralfabeti. Ne kete menyre i gjendet mesazhi i enkriptuar. Kurse Dekriptimi behet duke gjetur shkronjen e tekstit te enriputar ne rrehstin e pare te tabeles se Vigenere dhe ku do qe e gjen shkronjen e njejt ne ate rresht, mbi ate rresht vertikalisht gjendet shkronja e pare e plain textit.
 reference/source: https://www.geeksforgeeks.org/vigenere-cipher/ https://www.thecrazyprogrammer.com/2017/08/vigenere-cipher-c-c.html https://www.braingle.com/brainteasers/codes/vigenere.php https://www.youtube.com/watch?v=Pc9MABiASO4
  
+ FAZA II 
+
+Kjo faze permban gjithsej 6 kerkesa. Me posht do i rradise secilin se si kompjallohen dhe ekzekutohen
+
+-Create-User
+  - Per ta krijuar nje cift publik te RSA me emra te cilet ja jep useri duhet te ndiqni keto hapa:
+	1.Bej Run dhe pastaj edit configuration, 2. Jepi argumentet me rradhe si ne vijim: I. createdeleteuser, II.createuser, III."Emri i celsit"
  
+-Delete-User
+  - Per te fshire nje celes ekzistues te krijuar me heret duhet te ndiqni keto hapa:
+	2.Bej Run dhe pastaj edit configuration, 2.Jepi argumentet me rradhe si ne vijim: I.createdeleteuser, II.delete, III."Emri i celsit"
+(Dy kerkesat me siper i kemi ber me nje klase pasi qe ishte me e leht)
+
+-Export-key
+  - Per te eksportuar nje celes publik ose privat te shfrytzuesit nga direktoriumi i celsave ndiqni keto hapa:
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.export_key, II.publik ose privat, III.from(file) IV.to(file)
  
+-Import-key
+  - Per te importuar celsin publik ose privat te shfrytzuesit nga shtegu ne direktoriumin e celsace, ndiqni keto hapa:
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.Import_key, II.importo, III. emri
+ 
+-Write-message
+  - Per te shkruar nje mesazh te enkriptuar te dedikuar nje shfrytzuesi, duhet te ndiqni keto hapa:
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe si ne vijim: I.Writereadmessage, II.Encrypt, III.Celsi, IV.mesazhi, V.path(random')
+ 
+-Read-message
+  - Per ta dekriptuar nje mesazh, duhet te ndiqni keto hapa:
+	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe is ne vijim: I.Writereadmessage, II.Decryot, III.Mesazhi(file)
+ (Dy kerkesat me siper i kemi ber me nje klase pasi qe ishte me e leht)
  
