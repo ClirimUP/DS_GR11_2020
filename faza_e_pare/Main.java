@@ -1,12 +1,21 @@
 package academy.learnprogramming;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.security.spec.InvalidKeySpecException;
+
 public class Main {
     @SuppressWarnings("static-access")
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeySpecException {
         Vigenere vig = new Vigenere();
         Numerical numerical = new Numerical();
         PlayFair pf = new PlayFair();
+        export_key ek = new export_key();
+        Import_key ik = new Import_key();
+        writereadmessage write_message = new writereadmessage();
+        createdeleteuser creatdeleteeuser =new createdeleteuser();
+
         String metoda = args[0];
 
         if (metoda.equals("vigenere") && args[1].equals("enkriptimi")) {
@@ -79,17 +88,80 @@ public class Main {
                 System.out.println("Gabim keni dhene mesazhin. Korrektim: 1.playfair 2.'meotoda' 3.'celesi' 3.'kodi'. ");
             }
         }
+         else if (args[0].equals("createdeleteuser")&&args[1].equals("createuser")) {
+            try {
+                creatdeleteeuser.Fillfiles(args[2]);
+            } catch (Exception e) {
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("Pozita1: createdeleteuser, Pozita2: createuser, Pozita3: celsi");
+            }
+        }else if(args[0].equals("createdeleteuser")&&args[1].equals("delete")){
+            try {
+                createdeleteuser.delete(args[2]);
+            }catch (Exception e){
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("Pozita1: createdeleteuser, Pozita2: delete, Pozita3: celsi");
+
+            }
+        }
+        else if(args[0].equals("writereadmessage")&&args[1].equals("Encrypt")){
+            try{
+                if(args.length==5) {
+                    write_message.Encrypt(args[2], args[3], args[4]);
+                } else {
+                    write_message.Encrypt(args[1], args[2], "random");
+                }
+            }catch (Exception e){
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("Pozita1: writereadmessage, Pozita2:Encrypt");
+                System.out.println("Pozita3:celsi, Pozita4: mesazhi, Poztia5:path(ose vetem a)");
+            }
+        }else if(args[0].equals("writereadmessage")&&args[1].equals("Decrypt")){
+            try {
+                write_message.Decrypt(args[2]);
+            }catch (Exception e){
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("Pozita1: writereadmessage, Pozita2:Decrypt, Pozita3:text i enkriptuar");
+            }
+        }
+       else if (args[0].equals("export_key") && args[1].equals("publik")) {
+            try {
+                System.out.println("--Qelsi i zgjedhur eshte publik---");
+                String from = args[2];
+                String to = args[3];
+                export_key.publik(from,to);
+            } catch (Exception e) {
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("File nuk egziston ose ka ndonje gabim ");
+            }
+        }
+        else if (metoda.equals("export_key") && args[1].equals("privat")) {
+            try {
+                System.out.println("--Qelsi i zgjedhur eshte privat---");
+                String from = args[2];
+                String to = args[3];
+                export_key.privat(from,to);
+            } catch (Exception e) {
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("File nuk egziston ose ka ndonje gabim ");
+            }
+        }
+        else if (metoda.equals("Import_key") && args[1].equals("importo")) {
+            try {
+                System.out.println("--importi--");
+                String from = args[2];
+                Import_key.importo(from);
+            } catch (Exception e) {
+                System.out.println("Nuk keni dhene argumente te mjaftueshme");
+                System.out.println("File nuk egziston ose ka ndonje gabim ");
+            }
+        }
 
         else{
-            System.out.println("Keni nje gabim ne sintakse. Shkrimi adekuat i argumenteve eshte : ");
-            System.out.println("Kodet: Vigenere, Numerical,PlayFair");
-            System.out.println("Metodat : encrypt, decrypt");
-            System.out.println("Celesi: eshte me shkronja te alfabetit pervec se celes nuk kemi te meotda Numerical");
-            System.out.println("Teksti: Tekst i cfaredoeshem");
+            System.out.println("Keni nje gabim ne sintakse. Shkrimi i argumenteve nuk eshte ne rregull! ");
+            System.out.println("Rishikoni edhe njeher argumentet!");
             System.exit(1);
-
         }
     }
-
-
 }
+
