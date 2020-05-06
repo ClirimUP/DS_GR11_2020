@@ -70,3 +70,15 @@ Kjo faze permban gjithsej 6 kerkesa. Me posht do i rradise secilin se si kompjal
 	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe is ne vijim: I.Writereadmessage, II.Decryot, III.Mesazhi(file)
  (Dy kerkesat me siper i kemi ber me nje klase pasi qe ishte me e leht)
  
+ Referencimet per fazen e dyte:
+ http://tutorials.jenkov.com/java-cryptography/keypairgenerator.html
+ http://staff.cc/java/entrust/javadocs/java/security/interfaces/RSAPrivateCrtKey.html
+ http://www.cs.utsa.edu/~wagner/laws/ARSAFast.html
+ https://www.codota.com/code/query/java.security.spec@RSAPublicKeySpec+java.math@BigInteger
+ https://developers.google.com/j2objc/javadoc/jre/reference/java/security/spec/RSAPublicKeySpec
+ https://stackoverflow.com/questions/19593661/how-documentbuilderfactorynewinstance-is-an-example-of-abstract-factory-patte
+ https://www.codota.com/code/java/classes/java.security.spec.RSAPublicKeySpec?fbclid=IwAR0HKWftjcUujwAUDbkJEipBmx9CzcKmrOmbOEcI1CAIIfuNZ4Ab-eV3dUU
+ https://stackoverflow.com/questions/21039602/creating-8-byte-iv-in-java
+ https://stackoverflow.com/questions/19593661/how-documentbuilderfactorynewinstance-is-an-example-of-abstract-factory-patte
+ https://www.codota.com/code/query/java.security.spec@RSAPublicKeySpec+java.security.spec@RSAPrivateKeySpec
+ https://stackoverflow.com/questions/19593661/how-documentbuilderfactorynewinstance-is-an-example-of-abstract-factory-patte
