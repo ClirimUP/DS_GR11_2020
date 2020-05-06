@@ -124,44 +124,6 @@ public class Main {
                 System.out.println("Pozita1: writereadmessage, Pozita2:Decrypt, Pozita3:text i enkriptuar");
             }
         }
-       else if (args[0].equals("export_key") && args[1].equals("publik")) {
-            try {
-                System.out.println("--Qelsi i zgjedhur eshte publik---");
-                String from = args[2];
-                String to = args[3];
-                export_key.publik(from,to);
-            } catch (Exception e) {
-                System.out.println("Nuk keni dhene argumente te mjaftueshme");
-                System.out.println("File nuk egziston ose ka ndonje gabim ");
-            }
-        }
-        else if (metoda.equals("export_key") && args[1].equals("privat")) {
-            try {
-                System.out.println("--Qelsi i zgjedhur eshte privat---");
-                String from = args[2];
-                String to = args[3];
-                export_key.privat(from,to);
-            } catch (Exception e) {
-                System.out.println("Nuk keni dhene argumente te mjaftueshme");
-                System.out.println("File nuk egziston ose ka ndonje gabim ");
-            }
-        }
-        else if (metoda.equals("Import_key") && args[1].equals("importo")) {
-            try {
-                System.out.println("--importi--");
-                String from = args[2];
-                Import_key.importo(from);
-            } catch (Exception e) {
-                System.out.println("Nuk keni dhene argumente te mjaftueshme");
-                System.out.println("File nuk egziston ose ka ndonje gabim ");
-            }
-        }
-
-        else{
-            System.out.println("Keni nje gabim ne sintakse. Shkrimi i argumenteve nuk eshte ne rregull! ");
-            System.out.println("Rishikoni edhe njeher argumentet!");
-            System.exit(1);
-        }
-    }
+       
 }
 
