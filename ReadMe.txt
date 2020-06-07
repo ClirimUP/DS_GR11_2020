@@ -74,6 +74,25 @@ Kjo faze permban gjithsej 6 kerkesa. Me posht do i rradise secilin se si kompjal
 	1.Bej Run dhe pastaj edit configuration, 2.Jep argumentet me rradhe is ne vijim: I.Writereadmessage, II.Decryot, III.Mesazhi(file)
  (Dy kerkesat me siper i kemi ber me nje klase pasi qe ishte me e leht)
  
+ Faza III 
+
+Kjo faze permban gjithsej 6 kerkesa, gjithsesi ne kemi arritur ti bejme vetem 4!
+-Create-user 
+	Ekzekutimi i me hershem te kodit eshte qartsuar ne fazen e kaluar. Pasi te jane bere ekzekutimetm per ta ekzekutuar
+metoden e fjalekalimit, pasi te jet ber kodi run shtypni fjalekalimin me nje numer dhe karakter special!
+
+-Delete-user
+	Hapat e ekzekutimit te kesaj komande jane njejt si ne fazen e kaluar!
+
+-Login
+	1.Bej Run dhe pastaj edit configuration, 2. Jepi argumentet me rradhe si ne vijim: I. login,
+ II.logohu, III."Emri i userit"
+
+-Status 
+	1.Bej Run dhe pastaj edit configuration, 2. Jepi argumentet me rradhe si ne vijim: I. login, 
+II.status, III."Emri i token"
+
+ 
  Referencimet per fazen e dyte:
  http://tutorials.jenkov.com/java-cryptography/keypairgenerator.html
  http://staff.cc/java/entrust/javadocs/java/security/interfaces/RSAPrivateCrtKey.html
