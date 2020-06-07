@@ -1,13 +1,23 @@
 package academy.learnprogramming;
 
+import org.w3c.dom.ls.LSOutput;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.security.NoSuchAlgorithmException;
 import java.security.NoSuchProviderException;
 import java.security.spec.InvalidKeySpecException;
+import java.util.Base64;
 
 public class Main {
     @SuppressWarnings("static-access")
 
-    public static void main(String[] args) throws NoSuchProviderException, NoSuchAlgorithmException, InvalidKeySpecException {
+    public static void main(String[] args) throws NoSuchProviderException, NoSuchAlgorithmException,
+            InvalidKeySpecException, IOException, SAXException, ParserConfigurationException {
+
         Vigenere vig = new Vigenere();
         Numerical numerical = new Numerical();
         PlayFair pf = new PlayFair();
@@ -123,7 +133,8 @@ public class Main {
                 System.out.println("Nuk keni dhene argumente te mjaftueshme");
                 System.out.println("Pozita1: writereadmessage, Pozita2:Decrypt, Pozita3:text i enkriptuar");
             }
-        }else if (args[0].equals("export_key") && args[1].equals("publik")) {
+        }
+       else if (args[0].equals("export_key") && args[1].equals("publik")) {
             try {
                 System.out.println("--Qelsi i zgjedhur eshte publik---");
                 String from = args[2];
@@ -155,6 +166,23 @@ public class Main {
                 System.out.println("File nuk egziston ose ka ndonje gabim ");
             }
         }
+        else if(metoda.equals("login") && args[1].equals("logohu")){
+            try {
+                System.out.println("Login");
+                login.token(args[2]);
+            }catch(Exception e){
+                System.out.println("Nuk keni dhene argumente te mjaftueshme!");
+            }
+        }
+        else if(metoda.equals("login") && args[1].equals("status")){
+            try {
+                System.out.println("Status");
+                login.Kontrollo(args[2]);
+            }catch(Exception e){
+                System.out.println("Nuk keni dhene argumente te mjaftueshme!");
+            }
+
+        }
 
         else{
             System.out.println("Keni nje gabim ne sintakse. Shkrimi i argumenteve nuk eshte ne rregull! ");
@@ -162,6 +190,4 @@ public class Main {
             System.exit(1);
         }
     }
-       
 }
-
