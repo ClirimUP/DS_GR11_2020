@@ -1,6 +1,9 @@
 package academy.learnprogramming;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,11 +22,16 @@ import java.security.spec.RSAPrivateCrtKeySpec;
 import java.security.spec.RSAPrivateKeySpec;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
+import java.util.Scanner;
 
 public class createdeleteuser {
+
+
     public static void delete(String celsi) {
 
-        File keys = new File("c://keys"); //pathi i folderit te celsace
+        userD(celsi);
+
+        File keys = new File("c://keys");
         keys.mkdir();
 
         File filePub = new File(keys.getPath()+"//"+celsi+".pub.xml");//celsit pub
@@ -61,6 +69,23 @@ public class createdeleteuser {
             System.out.println("Gabim! Celesi: " + "'"+celsi+ "'" + " - nuk ekziston.");
         }
     }
+    public static void userD(String celsi) {
+
+        File K = new File("c://U");
+        K.mkdir();
+
+        File file = new File(K.getPath()+"//"+celsi+".txt");
+
+        if(!file.exists()) {
+            System.out.println("Useri "+celsi+" nuk ekziston");
+            System.exit(1);
+        }
+
+        if(file.delete()) {
+            System.out.println("Useri "+celsi+" eshte fshire");
+        }
+
+    }
 
 //-----------------------------------------------------------------------------------------------------------------------
 
@@ -68,6 +93,81 @@ public class createdeleteuser {
     private static RSAPrivateKeySpec PriKeyRSA = null;
     private static RSAPrivateCrtKey PrivRsaKeyCt = null;
 
+    private static byte[] getSalt() throws NoSuchAlgorithmException {
+
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+        byte[] salt = new byte[16];
+        sr.nextBytes(salt);
+        return salt;
+    }
+
+    private static String StrongPassword(String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+
+        int iteration = 65536;
+        char[] karakteret = password.toCharArray();
+        byte[] salt = getSalt();
+
+        PBEKeySpec spec = new PBEKeySpec(karakteret, salt, iteration, 128);
+        SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+
+        byte[] hash = skf.generateSecret(spec).getEncoded();
+        Base64.Encoder encoder = Base64.getEncoder();
+        return encoder.encodeToString(salt)+"."+encoder.encodeToString(hash);
+    }
+
+    public static void user(String celsi) throws FileNotFoundException, NoSuchAlgorithmException, InvalidKeySpecException {
+
+
+        File K = new File("c://U");
+        K.mkdir();
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Shenoni passwordin: ");
+        String passwordi = input.next();
+
+        String simbolet = "0123456789!@#$%^&*()_+[];',./?><|:}{";
+        int k=0;
+
+        if(passwordi.length()<6) {
+            System.out.println("Gabim! Passwordi duhet ti ket se paku 6 karaktere.");
+            System.exit(1);
+        }
+
+        for(int i=0; i<passwordi.toCharArray().length; i++) {
+            for(int j=0; j<simbolet.toCharArray().length; j++) {
+                if(((passwordi.toCharArray())[i] == simbolet.toCharArray()[j])) {
+
+                    k++;
+                }
+            }
+        }
+
+
+        System.out.print("Ju lutem shenoni perseri passwordin: ");
+        String passwordiRi = input.next();
+
+        input.close();
+
+        if(!passwordi.equals(passwordiRi)) {
+            System.out.println("Gabim! Passwordi nuk eshte i njejte.");
+            System.exit(1);
+        }
+
+        if(k==0) {
+            System.out.println("Gabim! Passwordi duhet te pket se paku nje numer ose simbol.");
+            System.exit(1);
+        }
+
+        String hash = StrongPassword(passwordi);
+        File file = new File(K.getPath()+"//"+celsi+".txt");
+        PrintWriter pw = new PrintWriter(file);
+        pw.println(hash);
+
+        System.out.println("Shfrytzuesi i krijuar: "+celsi);
+
+        pw.close();
+    }
 
     public createdeleteuser() throws NoSuchAlgorithmException, InvalidKeySpecException {
         KEY();      //gjeneremi i key pair RSA
@@ -118,7 +218,7 @@ public class createdeleteuser {
     }
 
     //https://www.codota.com/code/query/java.security.spec@RSAPublicKeySpec+java.math@BigInteger
-    //Metoda per krijimin e Celesit privat(Chinese Chinese remainder theorem)
+    //Metoda per krijimin e Celesit privat(Chinese remainder theorem)
     private static RSAPrivateCrtKey createCtKey(RSAPublicKeySpec rsaPubSpec, RSAPrivateKeySpec rsaPrivSpec) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         BigInteger e = rsaPubSpec.getPublicExponent();
@@ -144,7 +244,9 @@ public class createdeleteuser {
     }
 
     //Kjo metod ruan celsat ne xml files
-    public static void Fillfiles(String celsi) throws ParserConfigurationException, TransformerException, FileNotFoundException, NoSuchAlgorithmException {
+    public static void Fillfiles(String celsi) throws ParserConfigurationException, TransformerException, FileNotFoundException, NoSuchAlgorithmException, InvalidKeySpecException {
+
+       user(celsi);
 
         Base64.Encoder encoder = Base64.getEncoder();
         //https://developers.google.com/j2objc/javadoc/jre/reference/java/security/spec/RSAPublicKeySpec
@@ -169,7 +271,7 @@ public class createdeleteuser {
         transformerPub.setOutputProperty(OutputKeys.INDENT, "yes");
         DOMSource sourcePub = new DOMSource(docPub);
 
-        //celsi privat
+        //celsi
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
         Document doc = docBuilder.newDocument();
