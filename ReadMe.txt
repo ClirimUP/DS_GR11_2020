@@ -105,3 +105,17 @@ II.status, III."Emri i token"
  https://stackoverflow.com/questions/19593661/how-documentbuilderfactorynewinstance-is-an-example-of-abstract-factory-patte
  https://www.codota.com/code/query/java.security.spec@RSAPublicKeySpec+java.security.spec@RSAPrivateKeySpec
  https://stackoverflow.com/questions/19593661/how-documentbuilderfactorynewinstance-is-an-example-of-abstract-factory-patte
+ FazaIII 
+ 
+ https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-rsa-encryption
+ https://developer.okta.com/blog/2018/10/31/jwts-with-java
+ https://stackoverflow.com/questions/49503348/why-json-web-token-jwt-decrypt-with-out-knowing-secret-key
+ https://jwt.io/introduction/
+ https://www.youtube.com/watch?v=b9uAoYGg6-M
+ https://www.geeksforgeeks.org/generating-password-otp-java/
+ http://tutorials.jenkov.com/java-internationalization/simpledateformat.html#:~:text=Here%20is%20an%20example%20of,stringBuffer%2C%20new%20FieldPosition(0))%3B
+ https://www.geeksforgeeks.org/md5-hash-in-java/
+ https://docs.oracle.com/javase/8/docs/api/java/security/Signature.html
+ https://www.tutorialspoint.com/json/json_java_example.htm
+ https://niels.nu/blog/2016/java-rsa.html
+ 
